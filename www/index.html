@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+
+    <style type="text/css">
+      .platform-ios .manual-ios-statusbar-padding{
+        padding-top:20px;
+      }
+      .manual-remove-top-padding{
+        padding-top:0px;
+      }
+      .manual-remove-top-padding .scroll{
+        padding-top:0px !important;
+      }
+      ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+        margin-left:-10px;
+        margin-right:-10px;
+      }
+      ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+        border-radius:0px;
+        border-left:0px;
+        border-right: 0px;
+      }
+    </style>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/routes.js"></script>
+
+
+    <script src="js/directives.js"></script>
+
+    <script src="js/services.js"></script>
+
+
+    <!-- Only required for Tab projects w/ pages in multiple tabs
+    <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
+    -->
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+  <div>
+    <ion-side-menus enable-menu-with-back-views="false" data-componentid="side-menu21">
+        <ion-side-menu-content>
+            <ion-nav-bar class="bar-dark">
+                <ion-nav-back-button></ion-nav-back-button>
+                <ion-nav-buttons side="left">
+                    <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+                </ion-nav-buttons>
+            </ion-nav-bar>
+            <ion-nav-view></ion-nav-view>
+        </ion-side-menu-content>
+        <ion-side-menu side="left" id="side-menu21" style="background-color:#0E2020;">
+            <ion-content ng-controller="menuCtrl" padding="false" style="top:0px !important;" class="side-menu-left ">
+                <div class="spacer" data-componentid="spacer9" style="width: 268px; height: 66px;"></div>
+                <div class="profile-image" data-componentid="image2">
+                    <img src="img/useravatar.jpg" width="50%" style="display: block; margin-left: auto; margin-right: auto;">
+                </div>
+                <h3 id="menu-heading1" style="color:#FFFFFF;text-align:center;" data-componentid="heading1">User</h3>
+                <h4 id="menu-heading2" style="color:#FFF;text-align:center;" data-componentid="heading2">Level 1</h4>
+                <div class="spacer" data-componentid="spacer13" style="width: 268px; height: 49px;"></div>
+                <ion-list id="menu-list10" data-componentid="list10">
+                    <ion-item class="item-icon-left  side-menu-item" id="menu-list-item15" ui-sref="home" menu-close="" data-componentid="list-item15">
+                        <i class="icon ion-android-home"></i>Home</ion-item>
+                    <ion-item class="item-icon-left  side-menu-item" id="menu-list-item16" ui-sref="configuration.settings" menu-close="" data-componentid="list-item16">
+                        <i class="icon ion-ios-gear"></i>Configuration</ion-item>
+                    <ion-item class="item-icon-left  side-menu-item" id="menu-list-item17" data-componentid="list-item17">
+                        <i class="icon ion-help"></i>Help</ion-item>
+                </ion-list>
+                <div class="spacer" data-componentid="spacer14" style="width: 268px; height: 45px;"></div>
+                <ion-list id="menu-list12" data-componentid="list12">
+                    <ion-item class="item-icon-left  side-menu-item" id="menu-list-item19" ui-sref="login" menu-close="" data-componentid="list-item19">
+                        <i class="icon ion-log-out"></i>Log out</ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-side-menu>
+    </ion-side-menus>
+</div>
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD3nTA1b7dKE27rvL4cHDGJNDmX__3w0Gg&sensor=true"></script>
+  <script src="js/pace.min.js"></script>
+  </body>
+</html>

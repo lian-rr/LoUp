@@ -1,0 +1,22 @@
+<ion-view title="Settings" id="page10">
+    <ion-content padding="true" class="has-header">
+        <div class="spacer" style="width: 300px; height: 43px;"></div>
+        <form id="settings-form7" class="list">
+            <ion-toggle toggle-class="toggle-positive" ng-checked="true" id="settings-toggle1" name="notifications">Notifications</ion-toggle>
+            <div class="spacer" style="width: 300px; height: 43px;"></div>
+            <ion-toggle toggle-class="toggle-positive" ng-checked="true" id="settings-toggle2" name="rotation">Rotation block</ion-toggle>
+            <div class="spacer" style="width: 300px; height: 43px;"></div>
+            <label class="item item-select" id="settings-select1" name="language">
+                <span class="input-label">Language</span>
+                <select>
+                    <option selected>English</option>
+                    <option>Spanish</option>
+                </select>
+            </label>
+            <div class="spacer" style="width: 300px; height: 43px;"></div>
+        </form>
+        <div style="margin-right:-20px;">
+            <a ui-sref="configuration.changePassword" id="settings-button16" style="left:-10px;" class="button button-positive  button-full">Change Password</a>
+        </div>
+    </ion-content>
+</ion-view>

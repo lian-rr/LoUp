@@ -1,0 +1,36 @@
+$PRIMARY_COLOR: #1A3B3B;
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss/ionic.scss";
+
+.profile-image {
+	img {
+		border-radius: 50%;
+		border: 4px solid $PRIMARY_COLOR;
+	}
+
+}
+.side-menu-item {
+	background: none;
+	color: #fff;
+	border: 0;
+	.item-content {
+		background: none;
+		&.activated {
+			background: #46bcec;
+		}
+
+	}
+}
+ion-view,.pane,.view {
+	background-color: #1A3B3B;
+}
+
+.scroll {
+  height: 100%;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
