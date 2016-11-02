@@ -56,8 +56,8 @@ angular.module('app.controllers', [])
 
     }])
 
-  .controller('MapController', ['$scope', '$ionicLoading', 'Markers',
-    function ($scope, $ionicLoading, Markers) {
+  .controller('MapController', ['$scope', '$ionicLoading',
+    function ($scope, $ionicLoading) {
 
       var icons = {
         current: {
@@ -200,12 +200,14 @@ angular.module('app.controllers', [])
           });
         });
 
-
-
-        for (var i = 0, marker; marker = Markers.markers[i]; i++) {
-          marker.position = google.maps.LatLng(marker.lat, marker.lng),
+        var markers  = $scope.$meteorCollection(Markers,false);
+        //console.log(markers);
+        for (var i = 0, marker; marker = markers[i]; i++) {
+          marker.position = google.maps.LatLng(marker.lat, marker.lng);
+          console.log(marker);
           addMarker(marker);
         }
+
 
         $scope.map = map;
       });
