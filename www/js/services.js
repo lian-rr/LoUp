@@ -1,6 +1,6 @@
 angular.module('app.services', [])
 
-  .factory('Markers', [
+  .factory('Locations', [
     function () {
       return {
         //markers: [
