@@ -1,9 +1,40 @@
 angular
   .module('mapModule', ['mapService'])
-  .controller('MapController', ['$scope', '$ionicLoading', '$q','Markers',
-    function ($scope, $ionicLoading, $q, Markers) {
+  .controller('MapController', ['$scope', '$reactive', '$ionicLoading', '$q', 'Markers',
+    function ($scope, $reactive, $ionicLoading, $q, Markers) {
+      $reactive(this).attach($scope);
 
-      google.maps.event.addDomListener(window, 'load', function () {
+      $scope.init = function () {
+
+        $scope.loadLocations()
+          .then(function (locations) {
+            $scope.loadMap(locations);
+          });
+
+
+      };
+
+      $scope.loadLocations = function () {
+        var deferred = $q.defer();
+
+
+        $scope.helpers({
+          locations() {
+            return Locations.find({});
+          },
+        });
+
+        deferred.resolve($scope.locations);
+
+        return deferred.promise;
+
+      };
+
+
+      $scope.loadMap = function (locations) {
+
+        console.log(locations);
+
         var myLatlng = new google.maps.LatLng(37.3000, -120.4833);
         var mapOptions = {
           center: myLatlng,
@@ -63,15 +94,6 @@ angular
 
         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-        function addMarker(location) {
-          var aux = new google.maps.Marker({
-            title: location.name,
-            position: google.maps.LatLng(location.lat, location.lng),
-            icon: Markers.icons[location.type].icon,
-            map: map
-          });
-          console.log(aux);
-        }
 
         navigator.geolocation.getCurrentPosition(function (pos) {
           map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
@@ -83,14 +105,27 @@ angular
           });
         });
 
-        var locations = $scope.$meteorCollection(Locations, false);
-        console.log(locations);
+        function addMarker(location) {
+          var aux = new google.maps.Marker({
+            title: location.name,
+            position: google.maps.LatLng(location.lat, location.lng),
+            icon: Markers.icons[location.type].icon,
+            map: map
+          });
+          console.log(aux);
+        }
+
+
+        // console.log(locations.find());
 
         locations.forEach(function (location) {
-          console.log(location);
+          // console.log(location);
           addMarker(location);
         });
 
+
         $scope.map = map;
-      });
+      }
+
+
     }]);

@@ -2,6 +2,7 @@ if (Meteor.isServer) {
   Meteor.startup(function () {
     Locations.remove({});
     if (Locations.find().count() === 0) {
+
       var locations = [
         {
           name: "SIMPE",
