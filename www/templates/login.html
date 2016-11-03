@@ -5,7 +5,7 @@
             <ion-list id="login-list8">
                 <label class="item item-input" id="login-input3">
                     <span class="input-label">Username</span>
-                    <input type="text" placeholder="">
+                    <input type="text" placeholder="" ng-model="user.mail">
                 </label>
                 <label class="item item-input" id="login-input4">
                     <span class="input-label">Password</span>
@@ -13,7 +13,8 @@
                 </label>
             </ion-list>
             <div class="spacer" style="height: 40px;"></div>
-            <a ui-sref="home" id="login-button6" class="button button-stable  button-block">Log in</a>
+            <!--<a ui-sref="home" id="login-button6" class="button button-stable  button-block" ng-click="login()">Log in</a>-->
+            <a id="login-button6" class="button button-stable  button-block" ng-click="login(user)">Log in</a>
             <a ui-sref="signup" id="login-button7" class="button button-positive  button-block button-clear">Or create an account</a>
         </form>
     </ion-content>
