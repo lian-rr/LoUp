@@ -1,13 +1,13 @@
-<ion-view title="Account" id="page12">
+<ion-view title="Account" id="page12" >
     <ion-content padding="true" class="has-header">
         <div class="profile-image">
             <img src="../img/useravatar.jpg" width="40%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
         </div>
         <h4 id="account-heading3" style="color:#fff;text-align:center;">Level 1</h4>
-        <form id="account-form6" class="list">
+        <form id="account-form6" class="list" ng-controller="accountCtrl">
             <label class="item item-input profile-input" id="account-input12">
-                <span class="input-label">Name</span>
-                <input type="text" placeholder="" ng-model="user.name">
+                <span class="input-label" >Name</span>
+                <input type="text" placeholder=""  value= "{{ user.name }}">
             </label>
             <div class="spacer" style="width: 300px; height: 29px;"></div>
             <label class="item item-input profile-input" id="account-input13">
@@ -17,12 +17,12 @@
             <div class="spacer" style="width: 300px; height: 29px;"></div>
             <label class="item item-input" id="account-input14">
                 <span class="input-label">Email</span>
-                <input type="email" placeholder="">
+                <input type="email" placeholder="" value= "{{ user.email }}">
             </label>
             <div class="spacer" style="width: 300px; height: 29px;"></div>
             <label class="item item-input" id="account-input15">
                 <span class="input-label">Phone</span>
-                <input type="tel" placeholder="">
+                <input type="tel" placeholder="" value= "{{ user.phone }}">
             </label>
         </form>
     </ion-content>

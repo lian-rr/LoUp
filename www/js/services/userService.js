@@ -11,7 +11,12 @@ angular.module('UserService', [])
         }
       ],
 
-      active: null
+      active:  {
+        name: 'Lian',
+        lastname: 'Rodriguez',
+        email: 'lian@hotmail.com',
+        phone: '87229900'
+      }
 
     }
 
